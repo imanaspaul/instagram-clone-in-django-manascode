@@ -41,9 +41,17 @@ INSTALLED_APPS = [
     # Rest Auth Apps
 
     'rest_framework',
-    'rest_framework.authtoken',
-    'rest_auth'
-]
+    'knox',
+    'userprofile',
+]   
+
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':('knox.auth.TokenAuthentication',)
+}
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
