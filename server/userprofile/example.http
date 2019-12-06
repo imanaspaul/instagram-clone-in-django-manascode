@@ -1,0 +1,2 @@
+GET http://127.0.0.1:8000/api/auth/profile HTTP/1.1
+Authorization: Token apikey

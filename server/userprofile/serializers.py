@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User 
+from . models import Profile
 from django.contrib.auth import authenticate 
 
 
@@ -39,3 +40,9 @@ class LoginSerializer(serializers.Serializer):
         if user and user.is_active:
             return user
         raise serializers.ValidationError("Incorrect Credentials")
+
+
+class ProfileSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Profile
+		fields = "__all__"
